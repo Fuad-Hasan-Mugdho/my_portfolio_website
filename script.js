@@ -88,54 +88,54 @@ filterButtons.forEach((button) => {
 			target.setAttribute("data-filter-hidden", show ? "false" : "true");
 		});
 	});
+});
 
-	function openProjectModal(projectCard) {
-		if (!projectModal || !projectCard) {
-			return;
-		}
-
-		modalTitle.textContent = projectCard.dataset.projectTitle || "Project Details";
-		modalSummary.textContent = projectCard.dataset.projectSummary || "Details unavailable.";
-		modalStack.textContent = projectCard.dataset.projectStack || "N/A";
-		modalImpact.textContent = projectCard.dataset.projectImpact || "Confidential impact details.";
-
-		projectModal.classList.add("is-open");
-		projectModal.setAttribute("aria-hidden", "false");
-		document.body.style.overflow = "hidden";
+function openProjectModal(projectCard) {
+	if (!projectModal || !projectCard) {
+		return;
 	}
 
-	function closeProjectModal() {
-		if (!projectModal) {
-			return;
-		}
+	modalTitle.textContent = projectCard.dataset.projectTitle || "Project Details";
+	modalSummary.textContent = projectCard.dataset.projectSummary || "Details unavailable.";
+	modalStack.textContent = projectCard.dataset.projectStack || "N/A";
+	modalImpact.textContent = projectCard.dataset.projectImpact || "Confidential impact details.";
 
-		projectModal.classList.remove("is-open");
-		projectModal.setAttribute("aria-hidden", "true");
-		document.body.style.overflow = "";
+	projectModal.classList.add("is-open");
+	projectModal.setAttribute("aria-hidden", "false");
+	document.body.style.overflow = "hidden";
+}
+
+function closeProjectModal() {
+	if (!projectModal) {
+		return;
 	}
 
-	detailButtons.forEach((button) => {
-		button.addEventListener("click", () => {
-			const card = button.closest(".project");
-			openProjectModal(card);
-		});
+	projectModal.classList.remove("is-open");
+	projectModal.setAttribute("aria-hidden", "true");
+	document.body.style.overflow = "";
+}
+
+detailButtons.forEach((button) => {
+	button.addEventListener("click", () => {
+		const card = button.closest(".project");
+		openProjectModal(card);
+	});
+});
+
+if (projectModal) {
+	projectModal.addEventListener("click", (event) => {
+		const target = event.target;
+		if (target instanceof HTMLElement && (target.dataset.closeModal === "true" || target.classList.contains("project-modal-close"))) {
+			closeProjectModal();
+		}
 	});
 
-	if (projectModal) {
-		projectModal.addEventListener("click", (event) => {
-			const target = event.target;
-			if (target instanceof HTMLElement && (target.dataset.closeModal === "true" || target.classList.contains("project-modal-close"))) {
-				closeProjectModal();
-			}
-		});
-
-		document.addEventListener("keydown", (event) => {
-			if (event.key === "Escape") {
-				closeProjectModal();
-			}
-		});
-	}
-});
+	document.addEventListener("keydown", (event) => {
+		if (event.key === "Escape") {
+			closeProjectModal();
+		}
+	});
+}
 
 const sections = document.querySelectorAll("main section[id]");
 
