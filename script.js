@@ -12,6 +12,8 @@ const modalTitle = document.getElementById("project-modal-title");
 const modalSummary = document.getElementById("project-modal-summary");
 const modalStack = document.getElementById("project-modal-stack");
 const modalImpact = document.getElementById("project-modal-impact");
+const copyUrlButton = document.getElementById("copy-url-btn");
+const shareUrlLink = document.getElementById("share-url");
 
 window.addEventListener("load", () => {
 	document.body.classList.add("is-ready");
@@ -133,6 +135,28 @@ if (projectModal) {
 	document.addEventListener("keydown", (event) => {
 		if (event.key === "Escape") {
 			closeProjectModal();
+		}
+	});
+}
+
+if (copyUrlButton && shareUrlLink) {
+	copyUrlButton.addEventListener("click", async () => {
+		const url = shareUrlLink.getAttribute("href");
+		if (!url) {
+			return;
+		}
+
+		try {
+			await navigator.clipboard.writeText(url);
+			copyUrlButton.textContent = "Copied";
+			setTimeout(() => {
+				copyUrlButton.textContent = "Copy";
+			}, 1400);
+		} catch {
+			copyUrlButton.textContent = "Failed";
+			setTimeout(() => {
+				copyUrlButton.textContent = "Copy";
+			}, 1400);
 		}
 	});
 }
