@@ -260,6 +260,13 @@ h2 {
   font-size: 0.84rem;
 }
 
+.identity-alias {
+  margin: 0.38rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
 .lead {
   margin: 0.75rem 0 0;
   max-width: 62ch;

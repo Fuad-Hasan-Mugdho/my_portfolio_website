@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://fuad-hasan-mugdho.github.io/my_portfolio_website/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://fuad-hasan-mugdho.github.io/my_portfolio_website/profile.jpg</image:loc>
+      <image:caption>Fuad Hasan Chowdhury, also known as Fuad Hasan Mugdho</image:caption>
+      <image:title>Fuad Hasan Chowdhury — Senior Software Engineer</image:title>
+    </image:image>
+  </url>
+</urlset>

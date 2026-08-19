@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fuad-hasan-mugdho.github.io/my_portfolio_website/sitemap.xml
