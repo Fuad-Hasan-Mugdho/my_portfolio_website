@@ -40,7 +40,7 @@ I work across the full software lifecycle—from requirements and architecture t
 ![Bash](https://img.shields.io/badge/Bash-12161d?style=flat-square&logo=gnubash&logoColor=white)
 ![C++](https://img.shields.io/badge/C%2B%2B-12161d?style=flat-square&logo=cplusplus&logoColor=659AD2)
 
-**Data**  
+**Database**  
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-12161d?style=flat-square&logo=postgresql&logoColor=74A9D8)
 ![MySQL](https://img.shields.io/badge/MySQL-12161d?style=flat-square&logo=mysql&logoColor=F29111)
 ![Oracle](https://img.shields.io/badge/Oracle-12161d?style=flat-square&logo=oracle&logoColor=F80000)
